@@ -1,0 +1,26 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    command: sleep infinity
+    environment:
+      - DATASTORE_EMULATOR_HOST=local-datastore:8081
+    ports:
+      - 8000:8000
+    tty: true
+    volumes:
+      - type: bind
+        source: ..
+        target: /workspace/python3-gae-template
+    depends_on:
+      - datastore
+
+  datastore:
+    image: google/cloud-sdk:latest
+    container_name: local-datastore
+    ports:
+      - 8081:8081
+    command: gcloud emulators firestore start --database-mode=datastore-mode --host-port=0.0.0.0:8081

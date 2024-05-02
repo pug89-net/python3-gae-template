@@ -1,0 +1,36 @@
+{
+    "name": "python3-gae-template",
+    "dockerComposeFile": "./compose.yaml",
+    "workspaceFolder": "/workspace",
+    "forwardPorts": [8000],
+    "service": "app",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "charliermarsh.ruff",
+                "codezombiech.gitignore",
+                "kevinrose.vsc-python-indent",
+                "mosapride.zenkaku",
+                "ms-azuretools.vscode-docker",
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "oderwat.indent-rainbow"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/rye/shims/python",
+                "[python]": {
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll.ruff": "explicit",
+                        "source.organizeImports.ruff": "explicit"
+                    },
+                    "editor.formatOnSave": true
+                },
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true,
+                "terminal.integrated.defaultProfile.linux": "bash"
+            }
+        }
+    },
+    "postCreateCommand": "gcloud init"
+}
