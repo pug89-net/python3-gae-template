@@ -14,7 +14,8 @@
                 "ms-azuretools.vscode-docker",
                 "ms-python.python",
                 "njpwerner.autodocstring",
-                "oderwat.indent-rainbow"
+                "oderwat.indent-rainbow",
+                "AmazonWebServices.amazon-q-vscode"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/opt/rye/shims/python",
