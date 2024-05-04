@@ -16,7 +16,7 @@ async def login(request: Request):
         request (Request): リクエスト
 
     Returns:
-        _TemplateResponse: ログイン画面レスポンス
+        _TemplateResponse: ログイン画面
     """
     message = {"message": "Hello, GAE world."}
     return _create_response("login.html", request, message)
@@ -28,6 +28,17 @@ async def login_auth(
     user_id: Annotated[str, Form()],
     password: Annotated[str, Form()],
 ):
+    """ダッシュボード画面表示処理です。
+    ログイン画面で入力されたアカウント情報の認証を行います。
+
+    Args:
+        request (Request): リクエスト
+        user_id (Annotated[str, Form): アカウントID
+        password (Annotated[str, Form): パスワード
+
+    Returns:
+        _TemplateResponse: ダッシュボード画面
+    """
     return _create_response(
         "index.html", request, {"prefecture_list": Prefecture.get_prefecture_list()}
     )
