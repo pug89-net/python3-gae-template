@@ -78,6 +78,8 @@ pydantic==2.7.1
 pydantic-core==2.18.2
     # via pydantic
 pytest==8.1.1
+python-multipart==0.0.9
+    # via python3-gae-template
 requests==2.31.0
     # via google-api-core
 rsa==4.9

@@ -20,17 +20,17 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form method="post" action="index">
+                                        <form method="POST" name="login_form" action="index">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                                <label for="inputEmail">Acount ID</label>
+                                                <input class="form-control" id="inputUserId" name="user_id" type="text" placeholder="name@example.com" />
+                                                <label for="inputUserId">Acount ID</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" />
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-primary" href="index">Login</a>
+                                                <a class="btn btn-primary" onclick="document.login_form.submit()">Login</a>
                                             </div>
                                         </form>
                                     </div>
@@ -52,5 +52,11 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{ url_for('static', path='/js/scripts.js') }}"></script>
+        <script>
+            function login(form) {
+                document.form.method = "POST";
+                document.form.submit();
+            }
+        </script>
     </body>
 </html>

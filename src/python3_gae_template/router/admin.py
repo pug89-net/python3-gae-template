@@ -1,5 +1,8 @@
-from fastapi import APIRouter, Request
+from typing import Annotated
+
+from fastapi import APIRouter, Form, Request
 from fastapi.templating import Jinja2Templates
+from python3_gae_template.prefecture import Prefecture
 
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
@@ -19,9 +22,15 @@ async def login(request: Request):
     return _create_response("login.html", request, message)
 
 
-@router.get("/index")
-async def login_auth(request: Request):
-    return _create_response("index.html", request, {})
+@router.post("/index")
+async def login_auth(
+    request: Request,
+    user_id: Annotated[str, Form()],
+    password: Annotated[str, Form()],
+):
+    return _create_response(
+        "index.html", request, {"prefecture_list": Prefecture.get_prefecture_list()}
+    )
 
 
 def _create_response(template_name: str, request: Request, args: dict):
