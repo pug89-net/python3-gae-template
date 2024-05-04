@@ -15,7 +15,9 @@
                 "ms-python.python",
                 "njpwerner.autodocstring",
                 "oderwat.indent-rainbow",
-                "AmazonWebServices.amazon-q-vscode"
+                "AmazonWebServices.amazon-q-vscode",
+                "GitHub.vscode-pull-request-github",
+                "GitHub.github-vscode-theme"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/opt/rye/shims/python",
