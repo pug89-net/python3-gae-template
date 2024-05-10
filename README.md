@@ -25,3 +25,11 @@ http://127.0.0.1:8000/docs
   - `gcloud auth application-default login`
 - カレントディレクトリを移動して依存関係を取得する
   - `cd python3-gae-template/ && rye sync`
+
+## Deploy for Google App Engine
+
+GAEでは`requirements.txt`に依存関係を記載する必要がありますが、`rye`では通常`requirements.txt`は作られないため、デプロイ前に作成する必要があります。
+
+現時点では自動化できていないため、依存関係に変更があった場合は以下のコマンドを実行して`requirements.txt`を再作成してください。
+
+`sed '/^-e/d' requirements.lock > app/requirements.txt`
