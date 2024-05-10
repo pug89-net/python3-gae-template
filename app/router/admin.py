@@ -1,11 +1,11 @@
 from typing import Annotated
 
+from app.prefecture import Prefecture
 from fastapi import APIRouter, Form, Request
 from fastapi.templating import Jinja2Templates
-from python3_gae_template.prefecture import Prefecture
 
 router = APIRouter()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="app/templates")
 
 
 @router.get("/login")

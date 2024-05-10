@@ -18,8 +18,6 @@ certifi==2024.2.2
     # via requests
 charset-normalizer==3.3.2
     # via requests
-click==8.1.7
-    # via uvicorn
 fastapi==0.110.2
     # via python3-gae-template
 google-api-core==2.18.0
@@ -40,8 +38,6 @@ grpcio==1.62.2
     # via grpcio-status
 grpcio-status==1.62.2
     # via google-api-core
-h11==0.14.0
-    # via uvicorn
 idna==3.7
     # via anyio
     # via requests
@@ -88,5 +84,3 @@ typing-extensions==4.11.0
     # via pydantic-core
 urllib3==2.2.1
     # via requests
-uvicorn==0.29.0
-    # via python3-gae-template
