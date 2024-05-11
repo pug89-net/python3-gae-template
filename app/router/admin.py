@@ -1,6 +1,6 @@
 from typing import Annotated
 
-from app.prefecture import Prefecture
+from app.model import Prefecture
 from fastapi import APIRouter, Form, Request
 from fastapi.templating import Jinja2Templates
 
@@ -40,7 +40,7 @@ async def login_auth(
         _TemplateResponse: ダッシュボード画面
     """
     return _create_response(
-        "index.html", request, {"prefecture_list": Prefecture.get_prefecture_list()}
+        "index.html", request, {"prefecture_list": Prefecture.get_prefectures()}
     )
 
 

@@ -117,7 +117,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                DataTable Example
+                                Prefecture List
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -136,8 +136,8 @@
                                     <tbody>
                                         {% for row in prefecture_list %}
                                         <tr>
-                                            <td>{{row.code}}</td>
-                                            <td>{{row.name}}</td>
+                                            <td>{{row.prefecture_code}}</td>
+                                            <td>{{row.prefecture_name}}</td>
                                         </tr>
                                         {% endfor %}
                                     </tbody>
