@@ -68,7 +68,7 @@ pydantic-core==2.18.2
     # via pydantic
 python-multipart==0.0.9
     # via python3-gae-template
-requests==2.31.0
+requests==2.32.0
     # via google-api-core
 rsa==4.9
     # via google-auth
