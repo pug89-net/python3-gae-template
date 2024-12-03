@@ -13,7 +13,7 @@ anyio==4.3.0
     # via starlette
 cachetools==5.3.3
     # via google-auth
-certifi==2024.2.2
+certifi==2024.7.4
     # via requests
 charset-normalizer==3.3.2
     # via requests
@@ -81,5 +81,5 @@ typing-extensions==4.11.0
     # via mypy
     # via pydantic
     # via pydantic-core
-urllib3==2.2.1
+urllib3==2.2.2
     # via requests
